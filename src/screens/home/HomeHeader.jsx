@@ -6,36 +6,38 @@ import Navbar from "../../components/Navbar/Navbar";
 
 const HomeHeader = () => {
   return (
-    <section className="m-5">
-      {/* Navbar */}
+    <section className="">
       <Navbar />
-
-      {/* Header Section with Background */}
       <div
-      
-        className="w-full bg-cover bg-right py-52 md:py-52 flex items-center justify-center rounded-3xl overflow-none"
+        className="
+    w-full bg-cover
+    bg-[position:50%_center]  md:bg-[position:60%_center]
+    py-52 md:py-60 mt-10
+    flex items-center justify-center
+  "
         style={{ backgroundImage: `url(${headerBgImg})` }}
       >
-        <div  data-aos="fade-up"  className="container pr-4 mx-auto h-full flex flex-col md:flex-row justify-center lg:justify-between items-center gap-20">
+        <div
+          data-aos="fade-up"
+          className="container pr-4 mx-auto h-full flex flex-col md:flex-row justify-center lg:justify-between items-center gap-20"
+        >
           {/* Left Content */}
           <div className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left gap-12 lg:w-[40%]">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl text-white font-kaisei_Decol font-normal leading-tight">
               Where Vision <br /> Meets Innovation.
             </h1>
-
-            <p className="text-base sm:text-lg md:text-xl xl:text-2xl text-white font-kaisei_Decol leading-relaxed max-w-md">
+            <p className="text-base sm:text-lg md:text-xl xl:text-2xl text-white font-kaisei_Decol">
               Stylish tortoiseshell glasses with clear nose pads, dual-tone
               temples, lightweight lenses, and UV-protected, anti-glare vision
               enhancement.
             </p>
-
             <div className="mt-2">
-              <PrimaryBtn to="/contactus" className="group-hover:text-white"> Visit Now</PrimaryBtn>
+              <PrimaryBtn to="/contactus" className="group-hover:text-white ">
+                {" "}
+                Visit Now
+              </PrimaryBtn>
             </div>
           </div>
-
-          {/* Right Content */}
-          
         </div>
       </div>
     </section>

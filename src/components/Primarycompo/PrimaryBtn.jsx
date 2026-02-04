@@ -6,7 +6,7 @@ const PrimaryBtn = ({ children, to }) => {
     <Link
      data-aos="zoom-in" 
       to={to}
-      className="bg-primary hover:bg-transparent text-white hover:text-primary text-xs sm:text-base lg:text-xl py-2.5 px-5 lg:px-10 font-kanit border border-transparent hover:border-primary duration-200 rounded"
+      className="bg-white hover:bg-primary text-primary hover:text-white text-xs sm:text-base lg:text-xl py-2.5 px-5 lg:px-10 font-kanit border border-transparent hover:border-primary duration-200 rounded"
     >
       {children}
     </Link>

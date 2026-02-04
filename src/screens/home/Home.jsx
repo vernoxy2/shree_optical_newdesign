@@ -22,9 +22,6 @@ const Home = () => {
       {/* Hero/Header Section */}
       <HomeHeader />
 
-      {/* Partner Logos Slider */}
-      <PartnerSlider />
-      
       {/* Lazy-loaded Sections */}
       <Suspense fallback={<div className="text-center py-10">Loading...</div>}>
         {/* <About />
@@ -32,9 +29,11 @@ const Home = () => {
         <Lenses />
         <Sunglasses /> */}
         <ShopFor />
-        <Eyeglasses/>
-        <Sunglassess/>
-        <Lensess/>
+        {/* Partner Logos Slider */}
+        <PartnerSlider />
+        <Eyeglasses />
+        <Sunglassess />
+        <Lensess />
         <Choose />
         <HappyCustomers />
       </Suspense>
