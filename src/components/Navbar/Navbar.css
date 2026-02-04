@@ -1,0 +1,97 @@
+@import url("https://fonts.google.com/specimen/Kaisei+Decol");
+
+.Header-Main-Container {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  height: 850px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Header-Pages-Container {
+  width: 60%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 100px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.Header-Logo {
+  height: 50px;
+  width: 100px;
+}
+
+.Header-Pages-Text {
+  color: #06213c;
+  font-size: 24px;
+  text-decoration: none;
+  font-weight: 400;
+  font-family: "Kaisei Decol", serif;
+}
+
+.Header-SubContainer-Row-Align {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: 100px 0;
+}
+
+.Header-SubContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    width: 45%;
+    
+}
+
+.Header-Container-Column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+}
+
+.Header-SubContainer-Heading-Text {
+  font-size: 65px;
+  color: #fff;
+  font-weight: 400;
+  font-family: "Kaisei Decol", serif;
+  margin-top: 100px;
+}
+.Header-SubContainer-Description {
+  width: 400px;
+  font-size: 24px;
+  color: #fff;
+  font-weight: 400;
+  font-family: "Kaisei Decol", serif;
+  line-height: 40px;
+}
+.Header-Visit-Btn {
+  width: 200px;
+  height: 50px;
+  background-color: #06213c;
+  font-size: 20px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Kaisei Decol", serif;
+}
+.Header-Img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+

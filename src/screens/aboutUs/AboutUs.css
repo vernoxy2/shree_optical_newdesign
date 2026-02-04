@@ -1,0 +1,165 @@
+@import url("https://fonts.google.com/specimen/Kaisei+Decol");
+@import url("https://fonts.google.com/specimen/Kanit");
+
+.About-Main-Container {
+  width: 100%;
+  height: 100%;
+  padding: 0 0 100px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.About-Shop-Story-Main-Container {
+    width: 100%;
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.About-Shop-Heading {
+    font-size: 68px;
+    font-weight: 400;
+    color: #06213C;
+    font-family: 'Kaisei Decol',serif;
+    margin: 30px 0;
+}
+.About-Shop-Row-Align-Container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #BBCED4;
+    padding: 40px;
+}
+.About-Shop-Text-Container {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin: 0 0 0 100px;
+}
+.About-Shop-SubHeading {
+    font-size: 48px;
+    font-weight: 400;
+    color: #06213C;
+    font-family: 'Kaisei Decol',serif;
+}
+.About-Shop-Description {
+    font-size: 24px;
+    font-weight: 400;
+    color: #334155;
+    font-family: 'Kanit',serif;
+    
+}
+.About-Shop-Img {
+    height: 370px;
+    width: 40%;
+}
+
+.About-ValuesMission-Main-Container {
+     width: 100%;
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.About-ValueMission-Heading {
+    font-size: 68px;
+    font-weight: 400;
+    color: #06213C;
+    font-family: 'Kaisei Decol',serif;
+    margin: 30px 0;
+}
+
+.About-ValuesMission-Row-Align-Container {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+    padding: 40px;
+}
+.About-ValuesMission-Text-Container {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+   
+}
+.About-ValuesMission-SubHeading {
+    font-size: 48px;
+    font-weight: 400;
+    color: #06213C;
+    font-family: 'Kaisei Decol',serif;
+}
+.About-ValuesMission-Description {
+    font-size: 24px;
+    font-weight: 400;
+    color: #334155;
+    font-family: 'Kanit',serif;
+    
+}
+.About-ValuesMission-Img {
+    height: 370px;
+    width: 40%;
+}
+
+.About-WhatSetsApart-Main-Container {
+     width: 100%;
+    margin: 50px 0 100px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+.About-WhatSetsApart-Heading {
+    font-size: 68px;
+    font-weight: 400;
+    color: #06213C;
+    font-family: 'Kaisei Decol',serif;
+    margin: 30px 0;
+}
+
+.About-WhatSetsApart-Bg-Img-Container {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: center;
+  
+}
+.About-WhatSetsApart-Text-Container {
+    width: 50%;
+    margin: 150px 0 0 0;
+    padding: 0 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+.About-WhatSetsApart-SubHeading {
+    font-size: 48px;
+    font-weight: 400;
+    color: #06213C;
+    font-family: 'Kaisei Decol',serif;
+    text-align: right;
+}
+.About-WhatSetsApart-Description {
+     font-size: 24px;
+    font-weight: 400;
+    color: #334155;
+    font-family: 'Kanit',serif;
+    text-align: right;
+}

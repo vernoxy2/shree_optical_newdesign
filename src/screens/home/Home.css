@@ -1,0 +1,572 @@
+@import url("https://fonts.google.com/specimen/Kaisei+Decol");
+@import url("https://fonts.google.com/specimen/Kanit");
+
+.Home-Main-Container {
+  width: 100%;
+  height: 100%;
+  padding: 0 0 100px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Home-Main-Container2 {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  height: 850px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Home-SubContainer-Row-Align {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: 100px 0;
+}
+
+.Home-SubContainer1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+  width: 45%;
+}
+
+.Home-SubContainer2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+  width: 45%;
+}
+
+.Home-Container-Column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+}
+
+.Home-SubContainer-Heading-Text {
+  font-size: 65px;
+  color: #fff;
+  font-weight: 400;
+  font-family: "Kaisei Decol", serif;
+  margin-top: 100px;
+}
+.Home-SubContainer-Description {
+  width: 400px;
+  font-size: 24px;
+  color: #fff;
+  font-weight: 400;
+  font-family: "Kaisei Decol", serif;
+  line-height: 40px;
+}
+.Home-Visit-Btn {
+  width: 200px;
+  height: 50px;
+  background-color: #06213c;
+  font-size: 20px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Kaisei Decol", serif;
+  text-decoration: none;
+}
+.Home-Img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ------------------------------- */
+
+.Home-About-Section-Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 50px 0;
+}
+.Home-About-Section-Heading {
+  font-size: 68px;
+  color: #06213c;
+  font-family: "kaisei Decol", serif;
+  font-weight: 400;
+}
+.Home-About-Row-Align-Container {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.Home-About-Sub-Container1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 45%;
+  gap: 40px;
+}
+.Home-About-Sub-Container2 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  width: 45%;
+}
+.Home-About-BgImg {
+  height: 500px;
+  width: 500px;
+  object-fit: contain;
+  position: relative;
+  left: -144px;
+}
+.Home-About-SpeckImg {
+  height: 200px;
+  width: 400px;
+  object-fit: contain;
+  position: relative;
+  top: 90px;
+  z-index: 1;
+}
+.Home-About-Heading {
+  font-size: 48px;
+  color: #06213c;
+  font-family: "kaisei Decol", serif;
+  font-weight: 700;
+}
+.Home-About-Description {
+  font-size: 24px;
+  color: #334155;
+  font-family: "kanit", serif;
+  font-weight: 500;
+}
+
+.Home-About-Visit-Btn {
+  width: 200px;
+  height: 50px;
+  background-color: #06213c;
+  font-size: 20px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Kanit", serif;
+  text-decoration: none;
+}
+
+.Home-Products-Section-Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 100px 0;
+}
+.Home-Products-Section-Heading {
+  font-size: 68px;
+  color: #06213c;
+  font-family: "kaisei Decol", serif;
+  font-weight: 400;
+  
+}
+.Home-Products-Section-Sub-Heading {
+  font-size: 48px;
+  color: #06213c;
+  font-family: "kaisei Decol", serif;
+  font-weight: 400;
+  margin: 50px 0 30px 0;
+}
+.Home-Products-Row-Align-Container {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.Home-Products-SubContainer1 {
+  width: 45%;
+}
+.Home-Products-SubContainer2 {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  text-align: right;
+}
+.Home-Products-Specks-Img-Row-Align {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.Home-Products-Heading {
+  font-size: 48px;
+  color: #06213c;
+  font-weight: 700;
+  font-family: "Kaisei Decol", serif;
+  text-align: right;
+}
+.Home-Products-Description {
+  font-size: 24px;
+  color: #334155;
+  font-weight: 400;
+  font-family: "Kaisei Decol", serif;
+  text-align: right;
+}
+.Home-Products-Img {
+  height: 600px;
+  width: 600px;
+  object-fit: contain;
+}
+.Home-Products-Specks-Img {
+  height: 200px;
+  width: 200px;
+  object-fit: contain;
+}
+.Home-Products-More-Btn {
+  width: 200px;
+  height: 50px;
+  background-color: #06213c;
+  font-size: 20px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Kanit", serif;
+  text-decoration: none;
+}
+.Home-Lenses-Section-Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0 0 50px 0;
+}
+.Home-Lenses-Section-Heading {
+  font-size: 48px;
+  color: #06213c;
+  font-family: "kaisei Decol", serif;
+  font-weight: 400;
+  margin: 50px 0 30px 0;
+}
+.Home-Lenses-Bg-Container {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.Home-Lenses-SubContainer1 {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 30px;
+  margin-left: 230px;
+}
+.Home-Lenses-SubContainer2 {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.Home-Lenses-LensTypes-Img {
+  height: 200px;
+  width: 200px;
+  object-fit: contain;
+  filter: blur(2px);
+  transform: scale(1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Default zoom + unblur for the center image (lensImg2) */
+.Home-Lenses-LensTypes-Img:nth-child(2) {
+  filter: blur(0);
+  transform: scale(1.5);
+  z-index: 1;
+}
+
+/* On hover - zoom and unblur */
+.Home-Lenses-LensTypes-Img:hover {
+  filter: blur(0);
+  transform: scale(1.2);
+  z-index: 2;
+}
+
+/* When one is hovered, blur the others */
+.Home-Lenses-SubContainer2:hover .Home-Lenses-LensTypes-Img {
+  filter: blur(2px);
+  transform: scale(1);
+}
+
+/* But keep hovered one unblurred and zoomed */
+.Home-Lenses-SubContainer2 .Home-Lenses-LensTypes-Img:hover {
+  filter: blur(0);
+  transform: scale(1.5);
+}
+
+.Home-Lenses-More-Btn {
+  width: 200px;
+  height: 50px;
+  background-color: #06213c;
+  font-size: 20px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Kanit", serif;
+  text-decoration: none;
+}
+
+.Home-Lenses-Heading {
+  font-size: 48px;
+  color: #06213c;
+  font-weight: 400;
+  font-family: "Kaisei Decol", serif;
+  text-align: left;
+}
+.Home-Lenses-Description {
+  font-size: 24px;
+  color: #334155;
+  font-weight: 400;
+  font-family: "Kanit", serif;
+}
+
+.Home-Sunglasses-Section-Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 100px 0 50px 0;
+}
+.Home-Sunglasses-Section-Heading {
+  font-size: 48px;
+  color: #06213c;
+  font-family: "kaisei Decol", serif;
+  font-weight: 400;
+  margin: 50px 0 30px 0;
+}
+
+.Home-Sunglasses-Row-Align-Container {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Home-Sunglasses-SubContainer1 {
+  width: 45%;
+}
+.Home-Sunglasses-SubContainer2 {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 30px;
+  text-align: right;
+}
+.Home-Singlasses-Img {
+  height: 700px;
+  width: 700px;
+  object-fit: contain;
+}
+.Home-Sunglasses-SubContainer2-Img {
+  height: 300px;
+  width: 600px;
+  object-fit: cover;
+}
+
+.Home-WhyChoose-Section-Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 100px 0 50px 0;
+}
+.Home-WhyChoose-Section-Heading {
+  font-size: 68px;
+  color: #06213c;
+  font-family: "kaisei Decol", serif;
+  font-weight: 400;
+  margin: 0 0 30px 0;
+}
+
+.Home-WhyChoose-Bg-Container {
+  width: 95%;
+  background-size: cover;
+  background-position: center;
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 50px 0;
+  border-radius: 10px;
+  box-shadow: inset 0 30px 30px -20px rgba(0, 0, 0, 0.5);
+  padding: 30px 0;
+  background-color: #becfd6;
+}
+.Home-WhyChoose-Row-Align-Container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+}
+.Home-WhyChoose-CardBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  height: 250px;
+  width: 30%;
+  text-align: center;
+  border-radius: 10px;
+  gap: 20px;
+}
+.Home-WhyChoose-CardBox2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  height: 250px;
+  width: 48%;
+  text-align: center;
+  border-radius: 10px;
+  gap: 20px;
+}
+.Home-WhyChoose-Icon {
+  height: 50px;
+  width: 60px;
+}
+.Home-WhyChoose-CardBox-Heading {
+  font-size: 30px;
+  color: #06213c;
+  font-weight: 500;
+  font-family: "Kaisei Decol", serif;
+}
+
+.Home-WhyChoose-CardBox-Description {
+  font-size: 20px;
+  color: #06213c;
+  font-weight: 400;
+  font-family: "Kanit", serif;
+}
+
+.Home-OurClient-Section-Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 100px 0 50px 0;
+}
+.Home-OurClient-Section-Heading {
+  font-size: 68px;
+  color: #06213c;
+  font-family: "kaisei Decol", serif;
+  font-weight: 400;
+  margin: 0 0 70px 0;
+}
+/* Container */
+.Home-OurClient-Row-Container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  gap: 20px;
+  transition: all 0.3s ease;
+}
+
+/* Card styles */
+.Home-OurClient-CardBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #d9d9d9; /* Blurred card background */
+  width: 30%;
+  gap: 15px;
+  padding: 30px;
+  filter: blur(2px);
+  transform: scale(1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Middle card starts unblurred and has original background */
+.Home-OurClient-CardBox:nth-child(2) {
+  background-color: #c4d1d9; /* Original background */
+  filter: blur(0);
+  transform: scale(1.09);
+  z-index: 1;
+}
+
+/* On hover over any card */
+.Home-OurClient-CardBox:hover {
+  filter: blur(0);
+  transform: scale(1.1);
+  z-index: 2;
+}
+
+/* When container is hovered, blur all cards */
+.Home-OurClient-Row-Container:hover .Home-OurClient-CardBox {
+  background-color: #d9d9d9;
+  filter: blur(2px);
+  transform: scale(1);
+}
+
+/* The hovered card resets blur and gets original background */
+.Home-OurClient-Row-Container .Home-OurClient-CardBox:hover {
+  background-color: #c4d1d9;
+  filter: blur(0);
+  transform: scale(1.1);
+}
+
+.Home-OurClient-Img {
+  height: 130px;
+  width: 130px;
+  object-fit: contain;
+}
+
+.Home-OurClient-Heading {
+  font-size: 30px;
+  font-weight: 600;
+  color: #22223b;
+  font-family: "Kanit", serif;
+}
+.Home-OurClient-Sub-Heading {
+  font-size: 20px;
+  font-weight: 500;
+  color: #3a86ff;
+  font-family: "Kanit", serif;
+}
+.Home-OurClient-Description {
+  font-size: 20px;
+  font-weight: 400;
+  color: #495057;
+  font-family: "Kanit", serif;
+}

@@ -1,0 +1,46 @@
+.GetQuote-Contact-Bg-Container {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 50px 0;
+}
+.GetQuote-Contact-Bg-Sub-Container {
+  width: 80%;
+}
+.GetQuote-Contact-Bg-Text-Container {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+}
+.GetQuote-Contact-Heading {
+  font-size: 48px;
+  color: #06213c;
+  font-family: "Kaisei Decol", serif;
+  font-weight: 400;
+  margin-top: 100px;
+}
+.GetQuote-Contact-Description {
+  font-size: 24px;
+  color: #334155;
+  font-family: "Kaisei Decol", serif;
+  font-weight: 400;
+}
+.GetQuote-Contact-GetQuoteBtn {
+  width: 200px;
+  height: 50px;
+  background-color: #06213c;
+  font-size: 20px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Kaisei Decol", serif;
+  text-decoration: none;
+}

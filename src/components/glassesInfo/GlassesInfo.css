@@ -1,0 +1,44 @@
+.glasses-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+}
+
+.glasses-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.label {
+  position: absolute;
+  color: white;
+  font-size: 14px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 8px;
+  border-radius: 6px;
+  line-height: 1.4;
+  max-width: 160px;
+}
+
+/* Customize positions based on your actual image layout */
+.front {
+  top: 40%;
+  left: 18%;
+}
+
+.nose-pads {
+  top: 20%;
+  left: 55%;
+}
+
+.lens-details {
+  top: 50%;
+  right: 10%;
+}
+
+.temples {
+  bottom: 15%;
+  left: 40%;
+}

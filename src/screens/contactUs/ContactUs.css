@@ -1,0 +1,198 @@
+@import url("https://fonts.google.com/specimen/Kaisei+Decol");
+@import url("https://fonts.google.com/specimen/Kanit");
+
+.Contact-Main-Container {
+  width: 100%;
+  height: 100%;
+  padding: 0 0 100px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Contact-Details-Main-Row-Container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 500px;
+  margin: 100px 0;
+}
+.Contact-Details-Section1-Container {
+  width: 48%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.Contact-Details-CallUs-Main-Container {
+  width: 100%;
+  background-color: #06213c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Contact-Call-Sub-Container {
+  width: 50%;
+  margin: 20px 0;
+}
+.Contact-Details-CallUs-Row-Container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  margin: 30px 0;
+}
+.Contact-Call-Icon {
+  height: 80px;
+  width: 80px;
+}
+.Contact-Call-Text {
+  color: #fff;
+  font-weight: 400;
+  font-family: "Kaisei Decol", serif;
+  font-size: 48px;
+}
+
+.Contact-Details-Description {
+  color: #06213c;
+  font-size: 24px;
+  font-weight: 400;
+  font-family: "Kaisei Decol", serif;
+}
+
+.Contact-Details-Description-Container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Contact-Email-Address-Heading {
+  color: #06213c;
+  font-weight: 400;
+  font-family: "Kaisei Decol", serif;
+  font-size: 48px;
+}
+.Contact-Email-Address-Description {
+  color: #06213c;
+  font-weight: 400;
+  font-family: "Kanit", serif;
+  font-size: 24px;
+}
+
+.Contact-Details-Section2-Container {
+  width: 45%;
+  height: 600px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.Contact-Map-Bg-Img {
+  width: 90%;
+  height: 100px;
+  align-self: flex-end;
+  margin-top: -80px;
+}
+.Contact-Map {
+  z-index: 100;
+  border: 15px #fff solid;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* From css */
+
+.Contact-Form-Main-Container {
+  width: 100%;
+  margin: 100px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Contact-Form-Heading {
+  color: #06213c;
+  font-size: 68px;
+  font-family: "Kaisei Decol", serif;
+  font-weight: 400;
+  text-align: center;
+}
+
+.Contact-Form-Bg-Container {
+  width: 100%;
+  height: 700px;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Contact-Form-Row-Container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  
+}
+.Contact-Input-Container {
+  width: 48%;
+}
+.Contact-Input-Container2 {
+  width: 80%;
+   margin: 30px 0;
+}
+.Contact-Form-Input-Heading {
+  color: #06213c;
+  font-weight: 400;
+  font-family: "Kaisei Decol", serif;
+  font-size: 48px;
+}
+.Contact-Input {
+  padding: 15px 10px;
+  margin-top: 8px;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 20px;
+  background-color: #F2F0F0;
+  border: 3px #fff solid;
+}
+.Contact-Input-Container input:focus {
+  outline: none;
+}
+
+.Contact-Input-Container2 input:focus {
+  outline: none;
+}
+.Contact-Input2 {
+  /* padding:  10px; */
+  margin: 10px 0;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 20px;
+  background-color: #F2F0F0;
+  border: 3px #fff solid;
+  height: 200px;
+}
+
+.Contact-Input-Btn {
+  width: 80%;
+  padding: 20px 20px;
+  background-color: #06213C;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+

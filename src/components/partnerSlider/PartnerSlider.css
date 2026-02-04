@@ -1,0 +1,28 @@
+.Partner-Wrapper {
+  overflow: hidden;
+  width: 100%;
+  background: white;
+  margin: 50px 0;
+}
+
+.Partner-Track {
+  display: flex;
+  width: fit-content;
+  animation: scrollLeft 30s linear infinite;
+}
+
+.Partner-Logo {
+  height: 120px;
+  width: 220px;
+  margin-right: 140px; /* consistent spacing */
+  flex-shrink: 0;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
