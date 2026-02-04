@@ -9,11 +9,10 @@ const Header = ({
   buttonText,
 }) => {
   return (
-    <section className="m-4 md:m-5">
+    <section className="">
       <Navbar />
       <div
-      
-      className="w-full bg-cover bg-center py-52 md:py-72 flex items-center justify-center rounded-3xl "
+      className="w-full bg-cover bg-center py-52 md:py-72 flex items-center justify-center overflow-none "
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div  data-aos="fade-up"  className="sm:container h-full flex flex-col md:flex-row  justify-center lg:justify-between items-center">

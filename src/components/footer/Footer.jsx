@@ -1,7 +1,7 @@
 import React from "react";
 // import "./Footer.css";
 import footerBgImg from "../../assets/footerBgImg.png";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.svg";
 import { FaFacebookSquare } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { BsTwitterX } from "react-icons/bs";
