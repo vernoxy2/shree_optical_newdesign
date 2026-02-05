@@ -6,6 +6,7 @@ import ManImg from "../../assets/HomePageImgs/ShopFor/ManImg.webp";
 import WomenImg from "../../assets/HomePageImgs/ShopFor/WomenImg.webp";
 import KidsImg from "../../assets/HomePageImgs/ShopFor/KidsImg.webp";
 import UnisexImg from "../../assets/HomePageImgs/ShopFor/UnisexImg.webp";
+import { FiArrowRight } from "react-icons/fi";
 
 const data = [
   {
@@ -35,39 +36,50 @@ const ShopFor = () => {
   const handleNavigate = (category) => {
     const map = { Man: "Men", Woman: "Women", Kids: "Kids", Unisex: "Unisex" };
     const gender = map[category] || category;
-    navigate({ pathname: "/products", search: `?gender=${encodeURIComponent(gender)}` , hash: "#our-products" });
+    navigate({
+      pathname: "/products",
+      search: `?gender=${encodeURIComponent(gender)}`,
+      hash: "#our-products",
+    });
   };
 
   return (
-    <div className="py-10 md:py-20 space-y-4 md:space-y-8">
-      <PrimaryHeading>Shop For</PrimaryHeading>
-      <div className="flex flex-col-reverse xl:flex-row gap-4 md:gap-8 items-center container sm:px-0 md:px-16 sm:pr-0">
-        <div className="w-full xl:w-1/2 grid grid-cols-2 gap-3 sm:gap-6 gap-y-10 sm:gap-y-20 py-10 lg:px-6">
+    <section>
+      <div className="py-10 md:py-20 space-y-4 md:space-y-8">
+        <PrimaryHeading>Shop For</PrimaryHeading>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-7 container ">
           {data.map((item) => (
             <div
-            data-aos="fade-up"
+              data-aos="fade-up"
               key={item.id}
               onClick={() => handleNavigate(item.category)}
-              className="relative flex flex-col items-start justify-end border-[3px] border-BorderColr rounded-[16px] group overflow-b-hidden cursor-pointer"
+              className="relative flex flex-col items-end justify-end  rounded-[16px] group overflow-hidden cursor-pointer bg-[#F5F9FC] hover:bg-primary"
             >
+              <FiArrowRight
+                className="absolute top-3 left-3
+             text-[#1F1F20] bg-white
+             rounded-full p-2
+             text-4xl
+             transform rotate-0
+             group-hover:-rotate-45
+           group-hover:text-primary
+               group-hover:bg-white
+             transition-transform duration-700 ease-in-out
+             z-10"
+              />
               <img
                 src={item.img}
                 alt={item.category}
-                className="object-cover h-44 md:h-80 -mt-12 group-hover:scale-105 duration-300 ease-in-out"
+                className="object-cover h-44 md:h-80 group-hover:scale-105 duration-1000 ease-in-out"
               />
-              <p className="absolute text-sm md:text-3xl text-white font-kaisei_Decol bottom-0 right-0 rounded-br-xl font-norma bg-gradient-to-l from-[#7ddfdf] to-[#92CAD4] p-2 px-4">
+              <p className="absolute text-sm md:text-[26px] text-[#1F1F20] group-hover:text-white font-Kanit bottom-0 left-0 p-7  ">
                 {item.category}
               </p>
-              
             </div>
           ))}
         </div>
-        <div data-aos="fade-left" className="xl:w-1/2 relative">
-          <img src={EyewearImg} alt="" className="object-cover" />
-          <h1 className="absolute left-10 bottom-10 text-white text-4xl md:text-7xl font-kaisei_Decol">Eyewear</h1>
-        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
