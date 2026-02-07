@@ -19,7 +19,7 @@ const AboutUs = () => {
         }
       />
 
-      <PartnerSlider />
+      {/* <PartnerSlider /> */}
       {/* shop story */}
       <Shopstory />
       {/* values and mission */}
@@ -45,7 +45,7 @@ const AboutUs = () => {
       <WhatSetUsApart />
       
 
-      <GetQuote to={"/contactus"} backgroundImage={aboutGetQuotebg} />
+      <GetQuote to={"/contactus"}  />
     </div>
   );
 };

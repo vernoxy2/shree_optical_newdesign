@@ -9,20 +9,20 @@ const Header = ({
   buttonText,
 }) => {
   return (
-    <section className="">
-      <Navbar />
+    <section className="w-full bg-cover bg-right py-52 md:py-72 flex items-center justify-center overflow-none "
+      style={{ backgroundImage: `url(${backgroundImage})` }}>
+      {/* <Navbar /> */}
       <div
-      className="w-full bg-cover bg-center py-52 md:py-72 flex items-center justify-center overflow-none "
-      style={{ backgroundImage: `url(${backgroundImage})` }}
+      
     >
       <div  data-aos="fade-up"  className="sm:container h-full flex flex-col md:flex-row  justify-center lg:justify-between items-center">
         {/* Left Text Content */}
         <div className="flex flex-col justify-center items-center md:items-start text-center md:text-left gap-5 ">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl text-[#06213C] font-kaisei_Decol font-normal leading-tight">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl text-white font-kaisei_Decol font-normal leading-tight">
             {headingText}
           </h1>
 
-            <p className="text-base sm:text-lg md:text-xl xl:text-2xl text-[#06213C] font-kanit leading-relaxed w-2/3">
+            <p className="text-base sm:text-lg md:text-xl xl:text-2xl text-white font-kanit leading-relaxed w-2/3">
               {description}
             </p>
 

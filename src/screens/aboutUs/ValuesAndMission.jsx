@@ -4,28 +4,17 @@ import PrimaryHeading from '../../components/Primarycompo/PrimaryHeading';
 
 const ValuesAndMission = () => {
   return (
-    <div className="py-10 md:py-20 space-y-5 md:space-y-8">
-      <PrimaryHeading className='pb-10'>Our Values and Mission</PrimaryHeading>
-
-      <div data-aos="fade" className="container grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-8">
-        <div className="flex flex-col gap-4 md:gap-7 text-center lg:text-left">
-          <h2 data-aos="fade-right" className="text-2xl md:text-4xl 2xl:text-5xl font-normal text-[#06213C] font-kaisei_Decol">
-            Clarity in Vision, Integrity in Service
-          </h2>
-          <p data-aos="fade-right" className="text-base md:text-xl xl:text-2xl font-normal text-[#334155] font-kanit leading-relaxed">
-            Committed to clarity, care, and quality eyewear that enhances
-            vision and builds lasting customer trust.
-          </p>
+    <section style={{backgroundImage: `url(${aboutValueMissionImg})`}} className='bg-cover bg-center h-[500px] md:h-[600px]'>
+      {/* <img src={aboutValueMissionImg} alt="" className='h-full w-full' /> */}
+      <div className='container flex justify-end items-end h-full'>
+        <div className='backdrop-blur-md bg-white/5 rounded-md p-6 md:p-10 text-white border border-white md:w-2/3 xl:w-2/5 mt-auto'>
+          <h1 className='text-2xl md:text-4xl 2xl:text-5xl font-kaisei_Decol'>Our Values & Mission</h1>
+          <p className='md:text-lg xl:text-2xl w-[90%]'>Committed to clarity, care, and quality eyewear that enhances vision and builds lasting customer trust.</p>
         </div>
 
-        <img
-         data-aos="zoom-in"
-          src={aboutValueMissionImg}
-          alt="About Values and Mission"
-          className=" w-full scale-125 xl:scale-150 object-cover rounded-xl"
-        />
       </div>
-    </div>
+      
+    </section>
   );
 };
 

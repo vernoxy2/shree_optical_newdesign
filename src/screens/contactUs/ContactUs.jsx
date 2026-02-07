@@ -9,6 +9,7 @@ import contactHeaderImg from "../../assets/ContactPageImg/contactHeaderImg.png";
 import Header from "../../components/header/Header";
 import ContactDetails from "./ContactDetails";
 import ContactFrom from "./ContactFrom";
+import Map from "./Map";
 
 const ContactUs = () => {
   return (
@@ -25,7 +26,8 @@ const ContactUs = () => {
       <ContactDetails />
 
       {/* contact form */}
-      <ContactFrom  />
+      {/* <ContactFrom  /> */}
+      <Map />
 
     </div>
   );

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/logoo.svg";
 import { GoX } from "react-icons/go";
 import { LuMenu } from "react-icons/lu";
 
@@ -26,7 +26,7 @@ const Navbar = () => {
    before:transition-transform before:duration-300 before:ease-out
    hover:before:scale-x-100`;
   return (
-    <nav className="w-full bg-primary fixed top-0 z-50">
+    <nav className="w-full bg-primary ">
       {/* ===== Top Bar ===== */}
       <div className="flex items-center justify-between px-4 py-3 md:justify-around">
         {/* Logo */}

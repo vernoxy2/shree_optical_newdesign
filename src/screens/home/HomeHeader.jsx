@@ -6,15 +6,15 @@ import Navbar from "../../components/Navbar/Navbar";
 
 const HomeHeader = () => {
   return (
-    <section className="">
-      <Navbar />
+    <>
+      {/* <Navbar /> */}
       <div
         className="
-    w-full bg-cover
-    bg-[position:50%_center]  md:bg-[position:60%_center]
-    py-52 md:py-60 mt-10
-    flex items-center justify-center
-  "
+          w-full bg-cover
+          bg-[position:50%_center] md:bg-[position:60%_center]
+          py-52 md:py-60
+          flex items-center justify-center
+        "
         style={{ backgroundImage: `url(${headerBgImg})` }}
       >
         <div
@@ -26,21 +26,22 @@ const HomeHeader = () => {
             <h1 className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl text-white font-kaisei_Decol font-normal leading-tight">
               Where Vision <br /> Meets Innovation.
             </h1>
+
             <p className="text-base sm:text-lg md:text-xl xl:text-2xl text-white font-kaisei_Decol">
               Stylish tortoiseshell glasses with clear nose pads, dual-tone
               temples, lightweight lenses, and UV-protected, anti-glare vision
               enhancement.
             </p>
+
             <div className="mt-2">
-              <PrimaryBtn to="/contactus" className="group-hover:text-white ">
-                {" "}
+              <PrimaryBtn to="/contactus">
                 Visit Now
               </PrimaryBtn>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </>
   );
 };
 

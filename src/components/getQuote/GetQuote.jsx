@@ -1,17 +1,19 @@
 import React from "react";
 import PrimaryBtn from "../Primarycompo/PrimaryBtn";
 import PrimaryHeading from "../Primarycompo/PrimaryHeading";
+import aboutGetQuotebg from "../../assets/AboutPageImgs/aboutGetQuotebg.png";
 
-const GetQuote = ({ backgroundImage }) => {
+
+const GetQuote = () => {
   return (
     <div
-      className="py-10 md:py-20 flex flex-col items-center justify-center gap-12 bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
+      className="py-12  bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${aboutGetQuotebg})` }}
     >
-      <div className="container  p-6 md:p-10 flex flex-col lg:flex-row items-center justify-between gap-10">
+      <div className="container flex flex-col lg:flex-row items-center justify-between gap-10">
         {/* Left Content */}
-        <div className="space-y-6 lg:w-1/2 text-center lg:text-left">
-          <PrimaryHeading className="lg:text-start">Contact Us</PrimaryHeading>
+        <div className="space-y-8 lg:w-1/2 text-center lg:text-left">
+          <PrimaryHeading className="lg:text-start py-0">Contact Us</PrimaryHeading>
           <p
             data-aos="fade-right"
             data-delay="700"
