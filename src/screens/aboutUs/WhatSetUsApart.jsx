@@ -1,6 +1,6 @@
 import React from "react";
 import WhatSetApartBg from "../../assets/whatSetApartBg.svg";
-import comma from "../../assets/AboutPageImgs/commaa.svg";
+import Qute from "../../assets/AboutPageImgs/Qutte.svg";
 
 const WhatSetUsApart = () => {
   return (
@@ -21,7 +21,7 @@ const WhatSetUsApart = () => {
             personalized service make us truly unique.
           </p>
           <div className="-my-6 flex justify-end ">
-            <img src={comma} alt="" />
+            <img src={Qute} alt="" />
           </div>
         </div>
       </div>

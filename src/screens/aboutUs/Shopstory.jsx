@@ -33,7 +33,7 @@ const Shopstory = () => {
             <hr className="border-2 border-white rounded-full w-40" />
 
             <div className="-my-6 flex justify-end ">
-              <img src={comma} alt="" />
+              <img src={Qute} alt="" />
             </div>
           </div>
 
