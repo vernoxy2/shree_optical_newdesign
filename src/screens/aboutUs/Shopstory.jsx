@@ -1,7 +1,7 @@
 import React from "react";
 import aboutShopImg from "../../assets/AboutPageImgs/aboutShopImg.png";
 import PrimaryHeading from "../../components/Primarycompo/PrimaryHeading";
-import comma from "../../assets/AboutPageImgs/comma.svg";
+import Qute from "../../assets/AboutPageImgs/Qute.svg";
 
 const Shopstory = () => {
   return (
