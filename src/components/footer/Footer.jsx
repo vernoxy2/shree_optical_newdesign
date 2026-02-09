@@ -49,7 +49,7 @@ const Footer = () => {
     >
       <div className="space-y-8 py-12 pb-5
       ">
-        <div className="container  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 gap-y-8   ">
+        <div className="container  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-y-8   ">
           {/* logo container  */}
           <div className="flex flex-col justify-center gap-5 md:col-span-2 xl:col-span-1 w-[80%] xl:w-full">
             <img
@@ -89,12 +89,12 @@ const Footer = () => {
             </div>
           </div>
           {/* quick links for Pages */}
-          <div className="space-y-3 xl:mx-auto ">
+          <div className="space-y-2 xl:mx-auto ">
             <h1 className="text-primary font-poppins md:text-lg xl:text-xl font-semibold ">
               Pages
             </h1>
             <hr className="border-primary w-14 " />
-            <ul className="flex flex-col gap-2">
+            <ul className="flex flex-col gap-0.5">
               {PageList.map((item, index) => (
                 <li key={index}>
                   <a
@@ -109,13 +109,13 @@ const Footer = () => {
           </div>
 
           {/* quick links for products */}
-          <div className="space-y-3 xl:mx-auto">
+          <div className="space-y-2 xl:mx-10">
             <h1 className="text-primary font-poppins md:text-lg xl:text-xl font-semibold ">
               Products
             </h1>
             <hr className="border-primary w-20" />
 
-            <ul className="flex flex-col gap-2">
+            <ul className="flex flex-col gap-0.5">
               {ProductsList.map((item, index) => (
                 <li key={index}>
                   <a
