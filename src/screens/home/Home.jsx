@@ -5,8 +5,15 @@ import PartnerSlider from "../../components/partnerSlider/PartnerSlider";
 import HomeHeader from "./HomeHeader";
 import ShopFor from "./ShopFor";
 import Eyeglasses from "./Eyeglasses";
+import HomeProduct from "./HomeProduct";
 import Sunglassess from "./Sunglassess";
 import Lensess from "./Lensess";
+import EyeglassesBg from "../../assets/HomePageImgs/Eyeglasses/EyeglassesBg.png";
+import SunglassessBg from "../../assets/HomePageImgs/Sunglassess/SunglassessBg.png";
+import LensesBg from "../../assets/HomePageImgs/Lenses/LensesBg.png";
+import { EyeglassesData } from "../../Data/EyeglassesData";
+import { SunglassessData } from "../../Data/SunglassessData";
+import { LensessData } from "../../Data/LensessData";
 
 // Lazy-loaded sections (optional for performance)
 const About = lazy(() => import("./About"));
@@ -31,9 +38,12 @@ const Home = () => {
         <ShopFor />
         {/* Partner Logos Slider */}
         <PartnerSlider />
-        <Eyeglasses />
-        <Sunglassess />
-        <Lensess />
+        <HomeProduct SectionHeading={"Eyeglasses"} SectionBg={EyeglassesBg} productDataList={EyeglassesData}/>
+        <HomeProduct SectionHeading={"Sunglassess"} SectionBg={SunglassessBg} className={"text-primary"} productDataList={SunglassessData}/>
+        <HomeProduct SectionHeading={"Lensess"} SectionBg={LensesBg} productDataList={LensessData}/>
+        {/* <Eyeglasses /> */}
+        {/* <Sunglassess /> */}
+        {/* <Lensess /> */}
         <Choose />
         <HappyCustomers />
       </Suspense>
