@@ -31,11 +31,11 @@ const conatactUsData = [
 const ContactDetails = () => {
   return (
     <section>
-      <div className="container  px0 ">
-        <div className="container px-0 bg-[#F0F0F0] flex flex-col xl:flex-row justify-center items-center gap-8 rounded-2xl">
+      <div className="container ">
+        <div className="container px-0 bg-[#F0F0F0] flex flex-col lg:flex-row justify-center items-center gap-y-4 md:gap-y-8  rounded-2xl">
           {/* Left Contact Info */}
-          <div data-aos="fade-right" className="xl:w-7/12 xl:px-20 pt-10">
-            <form action="" className="flex flex-col gap-8 ">
+          <div data-aos="fade-right" className="w-full xl:w-7/12 xl:px-16 2xl:px-20 py-8 container">
+            <form action="" className="flex flex-col gap-4 md:gap-8 ">
               <input type="text" placeholder="Name" className="Contact-Input" />
               <input
                 type="email"
@@ -62,14 +62,14 @@ const ContactDetails = () => {
           <div
             data-aos="zoom-in-left"
             style={{ backgroundImage: `url(${ContactBg})` }}
-            className="xl:w-5/12 relative h-[400px] sm:h-[500px] lg:h-[600px] bg-cover bg-center px-12 flex flex-col justify-center gap-8 rounded-b-2xl xl:rounded-bl-none xl:rounded-r-2xl"
+            className="w-full xl:w-5/12 relative h-[400px] sm:h-[500px] lg:h-[600px] bg-cover bg-center px-8 md:px-12 flex flex-col justify-center gap-4 md:gap-8 rounded-b-2xl xl:rounded-bl-none xl:rounded-r-2xl"
           >
             {conatactUsData.map((item) => (
               <div
                 key={item.id}
                 className="flex gap-2 md:gap-4 text-left lg:text-left"
               >
-                <Icon icon={item.icon} className="text-white text-5xl" />
+                <Icon icon={item.icon} className="text-white text-4xl md:text-5xl" />
                 <div className="flex-1">
                   <h1 className="text-white text-xl md:text-3xl font-kaisei_Decol">
                     {item.title}
