@@ -29,13 +29,13 @@ const HappyCustomers = () => {
 
   return (
     <>
-      <section className="bg-[#06213C] pt-0 pb-28 relative">
-        <PrimaryHeading className="p-0 text-white text-start container">
+      <section className="bg-[#06213C] pt-0 md:pb-28 relative">
+        <PrimaryHeading className=" text-white text-start container">
           Our Happy Client
         </PrimaryHeading>
         <div
           data-aos="fade-up"
-          className="container flex flex-col lg:flex-row items-center justify-between gap-8 p-10 sm:p-0 relative z-0"
+          className="container flex flex-col xl:flex-row items-center justify-between gap-8   relative z-20"
           onMouseLeave={() => setActiveIndex(1)} // Reset to 2nd card on mouse leave
         >
           {clients.map((client, index) => {
@@ -49,12 +49,12 @@ const HappyCustomers = () => {
                 tabIndex={0}
                 onMouseEnter={() => setActiveIndex(index)}
                 onFocus={() => setActiveIndex(index)} // For keyboard users
-                className={`flex flex-col space-y-4 transition-all duration-300 ease-in-out 
-                bg-white p-8 cursor-pointer w-full md:w-[80%] lg:w-full rounded-2xl
-                ${isActive ? "blur-0 -translate-y-8 bg-white" : " scale-100"}`}
+                className={`flex flex-col space-y-4 transition-all duration-300 ease-out 
+                bg-white p-4 md:p-8 cursor-pointer w-full md:w-[80%] lg:w-full rounded-2xl 
+                ${isActive ? "blur-0 lg:-translate-y-8 bg-white" : " scale-100"}`}
               >
-                <img src={Qute} alt="" className="h-20 w-20 mb-6"/>
-                <p className="text-base md:text-lg font-poppins text-[#495057] font-kanit w-[65%]">
+                <img src={Qute} alt="" className="h-20 w-20 mb-2 md:mb-4"/>
+                <p className="text-base md:text-lg font-poppins text-[#495057] font-kanit md:w-[85%]">
                   {client.description}
                 </p>
                 <img
@@ -74,7 +74,8 @@ const HappyCustomers = () => {
             );
           })}
         </div>
-        <div className="bg-primary h-1/2 absolute inset-1/2 z-10">cdsd</div>
+        <div className="bg-primary inset-y-1/2 h-1/2 absolute z-10  w-full  ">
+        </div>
       </section>
     </>
   );
