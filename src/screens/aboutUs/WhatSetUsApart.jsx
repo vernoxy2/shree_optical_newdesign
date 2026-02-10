@@ -5,18 +5,18 @@ import Qute from "../../assets/AboutPageImgs/Qutte.svg";
 const WhatSetUsApart = () => {
   return (
     <section className="py-10 md:py-20">
-      <div className="container mx-auto px-4 flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-16">
+      <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center gap-y-12 md:gap-y-16 ">
         {/* Background Image */}
-        <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
+        <div className=" flex justify-center lg:justify-start">
           <img
             src={WhatSetApartBg}
             alt="What Sets Us Apart Background"
-            className="w-full max-w-sm lg:max-w-full object-contain"
+            className="w-full max-w-sm lg:max-w-full object-contain scale-125"
           />
         </div>
 
         {/* Content Box */}
-        <div className="bg-primary text-white rounded-2xl w-full lg:w-1/2 p-6 sm:p-10 lg:p-16 space-y-6 relative">
+        <div className="bg-primary text-white rounded-2xl  p-6 sm:p-10 lg:p-16 space-y-6 chat-bubble relative">
           <div>
             <h1 className="font-kaisei_Decol text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-light">
               What Sets Us Apart

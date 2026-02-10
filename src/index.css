@@ -2,16 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-    section {
-        @apply py-12 md:py-28 space-y-5 md:space-y-10;
-    }
+@layer base {
+  section {
+    @apply py-12 md:py-28 space-y-5 md:space-y-10;
+  }
 
-    input {
-        @apply text-lg md:text-2xl text-[#B3B3B3] py-3 md:py-5 px-4 md:px-8 rounded-xl
-    }
+  input {
+    @apply text-lg md:text-2xl text-[#B3B3B3] py-3 md:py-5 px-4 md:px-8 rounded-xl;
+  }
 
-    textarea{
-        @apply text-lg md:text-2xl text-[#B3B3B3] py-3 md:py-5 px-4 md:px-8 rounded-xl
-    }
+  textarea {
+    @apply text-lg md:text-2xl text-[#B3B3B3] py-3 md:py-5 px-4 md:px-8 rounded-xl;
+  }
 }
+.chat-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -14px;
+  left: 24px;
+
+  width: 0;
+  height: 0;
+
+  border-top: 14px solid #D29E59;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+}
+
+/* Tablet */
+@media (min-width: 640px) {
+  .chat-bubble::after {
+    bottom: -16px;
+    left: 32px;
+    border-top-width: 16px;
+    border-left-width: 16px;
+    border-right-width: 16px;
+  }
+}
+
+/* Desktop → LEFT side */
+@media (min-width: 1024px) {
+  .chat-bubble::after {
+    bottom: auto;
+    top: 40px;
+    left: -18px;
+
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 20px solid #D29E59;
+    border-left: 0;
+  }
+}
+
