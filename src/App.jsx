@@ -6,7 +6,7 @@ import Footer from "./components/footer/Footer";
 // import MensProduct from './screens/productCategory/mensProduct/MensProduct';
 // import WomensProduct from './screens/productCategory/womensProduct/WomensProduct';
 // import KidsProduct from './screens/productCategory/kidsProduct/KidsProduct';
-// import Products from './screens/products/Products';
+import Products from './screens/products/Products.jsx';
 import ContactUs from "./screens/contactUs/ContactUs";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -31,7 +31,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/aboutus" element={<AboutUs />} />
-          {/* <Route path="/products" element={<Products />} /> */}
+          <Route path="/products" element={<Products />} />
           <Route path="/contactus" element={<ContactUs />} />
           {/* <Route path="/mens-product" element={<MensProduct />} /> */}
           {/* <Route path="/womens-product" element={<WomensProduct />} /> */}
