@@ -1,5 +1,4 @@
 import React from 'react';
-import sunglassesSectionImg from '../../assets/sunglassesSectionImg.png';
 import sunglassBlackImg from '../../assets/sunglassBlackImg.png';
 import PrimaryHeading from '../../components/Primarycompo/PrimaryHeading';
 import PrimaryBtn from '../../components/Primarycompo/PrimaryBtn';

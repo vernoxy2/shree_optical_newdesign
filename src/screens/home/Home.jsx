@@ -16,7 +16,7 @@ import { SunglassessData } from "../../Data/SunglassessData";
 import { LensessData } from "../../Data/LensessData";
 
 // Lazy-loaded sections (optional for performance)
-const About = lazy(() => import("./About"));
+// const About = lazy(() => import("./About"));
 const Products = lazy(() => import("./Products"));
 const Lenses = lazy(() => import("./Lenses"));
 const Sunglasses = lazy(() => import("./Sunglasses"));
