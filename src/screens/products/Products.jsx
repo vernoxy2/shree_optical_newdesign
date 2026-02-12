@@ -15,6 +15,13 @@ const Products = () => {
           "Stylish and protective sunglasses for men, designed to elevate your everyday look with confidence."
         }
       />
+      <Header
+        backgroundImage={ProductBg}
+        headingText={"About Us"}
+        description={
+          "Experience expert eye care and stylish eyewear, combining innovation, precision, and personalized service for crystal-clear vision and lasting confidence"
+        }
+      />
       <div className="w-full">
         <PartnerSlider />
       </div>
