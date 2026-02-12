@@ -24,7 +24,7 @@ const FiltersUI = ({
   } = selected;
 
   return (
-    <div className="space-y-2 h-full">
+    <div className="space-y-0.5 md:space-y-2 ">
       <h2 className="font-medium text-2xl flex items-center justify-between gap-2 bg-white px-4 py-1 rounded-md">
         Filter <CiFilter className="hidden lg:block font-bold text-2xl" />
       </h2>
@@ -180,7 +180,7 @@ const FiltersUI = ({
       </div>
       <button
         onClick={clearAllFilters}
-        className="w-full bg-red-500 text-white py-2 rounded-md hover:bg-red-600 transition"
+        className="w-full bg-red-500 text-white py-2 rounded-md hover:bg-red-600 transition "
       >
         Clear All Filters
       </button>

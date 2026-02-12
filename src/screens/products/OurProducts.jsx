@@ -3,8 +3,7 @@ import { useLocation } from "react-router-dom";
 import { CiFilter } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
 import PrimaryHeading from "../../components/Primarycompo/PrimaryHeading";
-import SunglassesR from "../../assets/HomePageImgs/Sunglassess/SunglassessR.png";
-import SunglassesL from "../../assets/HomePageImgs/Sunglassess/SunglassessL.png";
+
 import { productslist } from "../../Data/productslist";
 import FiltersUI from "./FiltersUI";
 import { FaLongArrowAltUp } from "react-icons/fa";
@@ -83,7 +82,7 @@ const OurProducts = () => {
     setSelected((prev) =>
       prev.includes(value)
         ? prev.filter((item) => item !== value)
-        : [...prev, value]
+        : [...prev, value],
     );
   };
 
@@ -107,48 +106,72 @@ const OurProducts = () => {
   // Reset to page 1 when filters change
   useEffect(() => {
     setCurrentPage(1);
-  }, [selectedShapes, selectedPrices, selectedBrands, selectedGender, selectedCategories, sortBy]);
+  }, [
+    selectedShapes,
+    selectedPrices,
+    selectedBrands,
+    selectedGender,
+    selectedCategories,
+    sortBy,
+  ]);
 
   // Pre-apply filters from URL
   useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    const genderParam = params.get("gender");
-    const categoryParam = params.get("category");
-    const shapeParam = params.get("shape");
+  const params = new URLSearchParams(location.search);
+  const genderParam = params.get("gender");
+  const categoryParam = params.get("category");
+  const shapeParam = params.get("shape");
 
-    if (genderParam) {
-      const normalized = genderParam.toLowerCase();
-      const map = {
-        men: "Men",
-        women: "Women",
-        kids: "Kids",
-        unisex: "Unisex",
-      };
-      const value = map[normalized] || genderParam;
-      if (genders.includes(value)) {
-        setSelectedGender([value]);
-        setExpandedSections((prev) => ({ ...prev, gender: true }));
+  let shouldScroll = false;
+
+  if (genderParam) {
+    const normalized = genderParam.toLowerCase();
+    const map = {
+      men: "Men",
+      women: "Women",
+      kids: "Kids",
+      unisex: "Unisex",
+    };
+
+    const value = map[normalized] || genderParam;
+
+    if (genders.includes(value)) {
+      setSelectedGender([value]);
+      setExpandedSections((prev) => ({ ...prev, gender: true }));
+      shouldScroll = true;
+    }
+  }
+
+  if (categoryParam && categories.includes(categoryParam)) {
+    setSelectedCategories([categoryParam]);
+    setExpandedSections((prev) => ({ ...prev, category: true }));
+    shouldScroll = true;
+  }
+
+  if (shapeParam && frameShapes.includes(shapeParam)) {
+    setSelectedShapes([shapeParam]);
+    setExpandedSections((prev) => ({ ...prev, frameShape: true }));
+    shouldScroll = true;
+  }
+
+  if (location.hash === "#our-products") {
+    shouldScroll = true;
+  }
+
+  if (shouldScroll) {
+    setTimeout(() => {
+      const element = document.getElementById("our-products");
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
       }
-    }
+    }, 100);
+  }
 
-    if (categoryParam && categories.includes(categoryParam)) {
-      setSelectedCategories([categoryParam]);
-      setExpandedSections((prev) => ({ ...prev, category: true }));
-    }
+}, [location.search, location.hash]);
 
-    if (shapeParam && frameShapes.includes(shapeParam)) {
-      setSelectedShapes([shapeParam]);
-      setExpandedSections((prev) => ({ ...prev, frameShape: true }));
-    }
-
-    if (location.hash === "#our-products") {
-      setTimeout(() => {
-        const element = document.getElementById("our-products");
-        if (element)
-          element.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 100);
-    }
-  }, [location.search, location.hash]);
 
   // Scroll detection for "Scroll to Top" button
   useEffect(() => {
@@ -199,7 +222,7 @@ const OurProducts = () => {
   const getPageNumbers = () => {
     const pages = [];
     const maxVisiblePages = 5;
-    
+
     if (totalPages <= maxVisiblePages) {
       for (let i = 1; i <= totalPages; i++) {
         pages.push(i);
@@ -207,17 +230,17 @@ const OurProducts = () => {
     } else {
       if (currentPage <= 3) {
         for (let i = 1; i <= 4; i++) pages.push(i);
-        pages.push('...');
+        pages.push("...");
         pages.push(totalPages);
       } else if (currentPage >= totalPages - 2) {
         pages.push(1);
-        pages.push('...');
+        pages.push("...");
         for (let i = totalPages - 3; i <= totalPages; i++) pages.push(i);
       } else {
         pages.push(1);
-        pages.push('...');
+        pages.push("...");
         for (let i = currentPage - 1; i <= currentPage + 1; i++) pages.push(i);
-        pages.push('...');
+        pages.push("...");
         pages.push(totalPages);
       }
     }
@@ -238,22 +261,8 @@ const OurProducts = () => {
   return (
     <section
       id="our-products"
-      className="py-10 md:py-20 space-y-4 md:space-y-8 relative"
+      className="py-10 md:py-20 space-y-0 relative"
     >
-      <img
-        data-aos="fade-left"
-        data-aos-duration="2000"
-        src={SunglassesR}
-        alt=""
-        className="absolute top-10 md:top-16 h-14 md:h-20 xl:h-auto right-0 xl:-right-28"
-      />
-      <img
-        data-aos="fade-right"
-        data-aos-duration="2000"
-        src={SunglassesL}
-        alt=""
-        className="absolute top-0 h-10 md:h-14 xl:h-auto xl:-left-16"
-      />
       <PrimaryHeading>Our Products</PrimaryHeading>
 
       {/* Mobile/Tablet Filters Button */}
@@ -317,7 +326,7 @@ const OurProducts = () => {
                     <button
                       onClick={() =>
                         setSelectedCategories(
-                          selectedCategories.filter((c) => c !== cat)
+                          selectedCategories.filter((c) => c !== cat),
                         )
                       }
                       className="ml-1 text-black/50 hover:text-black"
@@ -335,7 +344,7 @@ const OurProducts = () => {
                     <button
                       onClick={() =>
                         setSelectedShapes(
-                          selectedShapes.filter((s) => s !== shape)
+                          selectedShapes.filter((s) => s !== shape),
                         )
                       }
                       className="ml-1 text-black/50 hover:text-black"
@@ -353,7 +362,7 @@ const OurProducts = () => {
                     <button
                       onClick={() =>
                         setSelectedGender(
-                          selectedGender.filter((g) => g !== gender)
+                          selectedGender.filter((g) => g !== gender),
                         )
                       }
                       className="ml-1 text-black/50 hover:text-black"
@@ -371,7 +380,7 @@ const OurProducts = () => {
                     <button
                       onClick={() =>
                         setSelectedBrands(
-                          selectedBrands.filter((b) => b !== brand)
+                          selectedBrands.filter((b) => b !== brand),
                         )
                       }
                       className="ml-1 text-black/50 hover:text-black"
@@ -389,7 +398,7 @@ const OurProducts = () => {
                     <button
                       onClick={() =>
                         setSelectedPrices(
-                          selectedPrices.filter((p) => p !== price)
+                          selectedPrices.filter((p) => p !== price),
                         )
                       }
                       className="ml-1 text-black/50 hover:text-black"
@@ -405,7 +414,9 @@ const OurProducts = () => {
           {/* Results Counter & Sorting */}
           <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4 gap-2">
             <div className="text-sm text-gray-600">
-              Showing {startIndex + 1}-{Math.min(endIndex, sortedProducts.length)} of {sortedProducts.length} products
+              Showing {startIndex + 1}-
+              {Math.min(endIndex, sortedProducts.length)} of{" "}
+              {sortedProducts.length} products
             </div>
             <select
               value={sortBy}
@@ -456,7 +467,9 @@ const OurProducts = () => {
                     <span className="bg-gray-100 px-2 py-1 rounded-full">
                       {product.category}
                     </span>
-                    <span className="bg-gray-100 px-2 py-1 rounded-full">{product.number}</span>
+                    <span className="bg-gray-100 px-2 py-1 rounded-full">
+                      {product.number}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -472,55 +485,62 @@ const OurProducts = () => {
 
           {/* Pagination */}
           {sortedProducts.length > 0 && totalPages > 1 && (
-            <div className="flex justify-center items-center gap-2 mt-8 flex-wrap">
-              {/* Previous Button */}
-              <button
-                onClick={() => handlePageChange(currentPage - 1)}
-                disabled={currentPage === 1}
-                className={`px-4 py-2 rounded-lg border transition-colors ${
-                  currentPage === 1
-                    ? "bg-gray-100 text-gray-400 cursor-not-allowed"
-                    : "bg-white text-gray-700 hover:bg-[#BBCED4] hover:border-[#BBCED4]"
-                }`}
-              >
-                Previous
-              </button>
+  <div className="flex justify-center items-center gap-1 sm:gap-2 mt-8 flex-wrap">
+    {/* Previous Button */}
+    <button
+      onClick={() => handlePageChange(currentPage - 1)}
+      disabled={currentPage === 1}
+      className={`px-2 sm:px-4 py-1.5 sm:py-2 rounded-lg border transition-colors text-sm sm:text-base ${
+        currentPage === 1
+          ? "bg-gray-100 text-gray-400 cursor-not-allowed"
+          : "bg-white text-gray-700 hover:bg-[#BBCED4] hover:border-[#BBCED4]"
+      }`}
+    >
+      <span className="hidden sm:inline">Previous</span>
+      <span className="sm:hidden">Prev</span>
+    </button>
 
-              {/* Page Numbers */}
-              {getPageNumbers().map((page, index) => (
-                page === '...' ? (
-                  <span key={`ellipsis-${index}`} className="px-2 text-gray-500">
-                    ...
-                  </span>
-                ) : (
-                  <button
-                    key={page}
-                    onClick={() => handlePageChange(page)}
-                    className={`px-4 py-2 rounded-lg border transition-colors ${
-                      currentPage === page
-                        ? "bg-[#BBCED4] text-black border-[#BBCED4] font-semibold"
-                        : "bg-white text-gray-700 hover:bg-[#BBCED4]/30 hover:border-[#BBCED4]"
-                    }`}
-                  >
-                    {page}
-                  </button>
-                )
-              ))}
+    {/* Page Numbers */}
+    <div className="flex gap-1 sm:gap-2">
+      {getPageNumbers().map((page, index) =>
+        page === "..." ? (
+          <span
+            key={`ellipsis-${index}`}
+            className="px-1 sm:px-2 text-gray-500 flex items-center"
+          >
+            ...
+          </span>
+        ) : (
+          <button
+            key={page}
+            onClick={() => handlePageChange(page)}
+            className={`px-2 sm:px-4 py-1.5 sm:py-2 rounded-lg border transition-colors text-sm sm:text-base min-w-[32px] sm:min-w-[40px] ${
+              currentPage === page
+                ? "bg-[#BBCED4] text-black border-[#BBCED4] font-semibold"
+                : "bg-white text-gray-700 hover:bg-[#BBCED4]/30 hover:border-[#BBCED4]"
+            }`}
+          >
+            {page}
+          </button>
+        ),
+      )}
+    </div>
 
-              {/* Next Button */}
-              <button
-                onClick={() => handlePageChange(currentPage + 1)}
-                disabled={currentPage === totalPages}
-                className={`px-4 py-2 rounded-lg border transition-colors ${
-                  currentPage === totalPages
-                    ? "bg-gray-100 text-gray-400 cursor-not-allowed"
-                    : "bg-white text-gray-700 hover:bg-[#BBCED4] hover:border-[#BBCED4]"
-                }`}
-              >
-                Next
-              </button>
-            </div>
-          )}
+    {/* Next Button */}
+    <button
+      onClick={() => handlePageChange(currentPage + 1)}
+      disabled={currentPage === totalPages}
+      className={`px-2 sm:px-4 py-1.5 sm:py-2 rounded-lg border transition-colors text-sm sm:text-base ${
+        currentPage === totalPages
+          ? "bg-gray-100 text-gray-400 cursor-not-allowed"
+          : "bg-white text-gray-700 hover:bg-[#BBCED4] hover:border-[#BBCED4]"
+      }`}
+    >
+      <span className="hidden sm:inline">Next</span>
+      <span className="sm:hidden">Next</span>
+    </button>
+  </div>
+)}
         </div>
       </div>
 

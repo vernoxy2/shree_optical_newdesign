@@ -30,15 +30,15 @@ const PageList = [
 const ProductsList = [
   {
     title: "Sunglasses",
-    url: "/sunglasses",
+    url: "products?category=Sunglasses",
   },
   {
     title: "Eyeglasses",
-    url: "/eyeglasses",
+    url: "/products?category=Eyeglasses",
   },
   {
     title: "Lenses",
-    url: "/lenses",
+    url: "/products?category=Lenses",
   },
 ];
 const Footer = () => {
