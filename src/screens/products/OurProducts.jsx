@@ -117,61 +117,59 @@ const OurProducts = () => {
 
   // Pre-apply filters from URL
   useEffect(() => {
-  const params = new URLSearchParams(location.search);
-  const genderParam = params.get("gender");
-  const categoryParam = params.get("category");
-  const shapeParam = params.get("shape");
+    const params = new URLSearchParams(location.search);
+    const genderParam = params.get("gender");
+    const categoryParam = params.get("category");
+    const shapeParam = params.get("shape");
 
-  let shouldScroll = false;
+    let shouldScroll = false;
 
-  if (genderParam) {
-    const normalized = genderParam.toLowerCase();
-    const map = {
-      men: "Men",
-      women: "Women",
-      kids: "Kids",
-      unisex: "Unisex",
-    };
+    if (genderParam) {
+      const normalized = genderParam.toLowerCase();
+      const map = {
+        men: "Men",
+        women: "Women",
+        kids: "Kids",
+        unisex: "Unisex",
+      };
 
-    const value = map[normalized] || genderParam;
+      const value = map[normalized] || genderParam;
 
-    if (genders.includes(value)) {
-      setSelectedGender([value]);
-      setExpandedSections((prev) => ({ ...prev, gender: true }));
+      if (genders.includes(value)) {
+        setSelectedGender([value]);
+        setExpandedSections((prev) => ({ ...prev, gender: true }));
+        shouldScroll = true;
+      }
+    }
+
+    if (categoryParam && categories.includes(categoryParam)) {
+      setSelectedCategories([categoryParam]);
+      setExpandedSections((prev) => ({ ...prev, category: true }));
       shouldScroll = true;
     }
-  }
 
-  if (categoryParam && categories.includes(categoryParam)) {
-    setSelectedCategories([categoryParam]);
-    setExpandedSections((prev) => ({ ...prev, category: true }));
-    shouldScroll = true;
-  }
+    if (shapeParam && frameShapes.includes(shapeParam)) {
+      setSelectedShapes([shapeParam]);
+      setExpandedSections((prev) => ({ ...prev, frameShape: true }));
+      shouldScroll = true;
+    }
 
-  if (shapeParam && frameShapes.includes(shapeParam)) {
-    setSelectedShapes([shapeParam]);
-    setExpandedSections((prev) => ({ ...prev, frameShape: true }));
-    shouldScroll = true;
-  }
+    if (location.hash === "#our-products") {
+      shouldScroll = true;
+    }
 
-  if (location.hash === "#our-products") {
-    shouldScroll = true;
-  }
-
-  if (shouldScroll) {
-    setTimeout(() => {
-      const element = document.getElementById("our-products");
-      if (element) {
-        element.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
-    }, 100);
-  }
-
-}, [location.search, location.hash]);
-
+    if (shouldScroll) {
+      setTimeout(() => {
+        const element = document.getElementById("our-products");
+        if (element) {
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      }, 100);
+    }
+  }, [location.search, location.hash]);
 
   // Scroll detection for "Scroll to Top" button
   useEffect(() => {
@@ -259,10 +257,7 @@ const OurProducts = () => {
   };
 
   return (
-    <section
-      id="our-products"
-      className="py-10 md:py-20 space-y-0 relative"
-    >
+    <section id="our-products" className="py-10 md:py-20 space-y-0 relative">
       <PrimaryHeading>Our Products</PrimaryHeading>
 
       {/* Mobile/Tablet Filters Button */}
@@ -276,7 +271,7 @@ const OurProducts = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-4 md:gap-6 gap-y-4 container mx-auto">
         {/* Sidebar (Desktop) */}
-        <div className="hidden lg:block col-span-1 space-y-6 bg-[#E5E5E5] text-[#06213C] p-4 rounded-lg h-fit w-full font-kaisei_Decol">
+        <div data-aos="fade" className="hidden lg:block col-span-1 space-y-6 bg-[#E5E5E5] text-[#06213C] p-4 rounded-lg h-fit w-full font-kaisei_Decol">
           <FiltersUI
             expandedSections={expandedSections}
             toggleSection={toggleSection}
@@ -433,6 +428,8 @@ const OurProducts = () => {
           <div className="w-full grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-2 sm:gap-4">
             {currentProducts.map((product) => (
               <div
+              data-aos="fade-up"
+              data-aos-offset="200"
                 key={product.id}
                 className="relative bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden group"
               >
@@ -485,62 +482,62 @@ const OurProducts = () => {
 
           {/* Pagination */}
           {sortedProducts.length > 0 && totalPages > 1 && (
-  <div className="flex justify-center items-center gap-1 sm:gap-2 mt-8 flex-wrap">
-    {/* Previous Button */}
-    <button
-      onClick={() => handlePageChange(currentPage - 1)}
-      disabled={currentPage === 1}
-      className={`px-2 sm:px-4 py-1.5 sm:py-2 rounded-lg border transition-colors text-sm sm:text-base ${
-        currentPage === 1
-          ? "bg-gray-100 text-gray-400 cursor-not-allowed"
-          : "bg-white text-gray-700 hover:bg-[#BBCED4] hover:border-[#BBCED4]"
-      }`}
-    >
-      <span className="hidden sm:inline">Previous</span>
-      <span className="sm:hidden">Prev</span>
-    </button>
+            <div className="flex justify-center items-center gap-1 sm:gap-2 mt-8 flex-wrap">
+              {/* Previous Button */}
+              <button
+                onClick={() => handlePageChange(currentPage - 1)}
+                disabled={currentPage === 1}
+                className={`px-2 sm:px-4 py-1.5 sm:py-2 rounded-lg border transition-colors text-sm sm:text-base ${
+                  currentPage === 1
+                    ? "bg-gray-100 text-gray-400 cursor-not-allowed"
+                    : "bg-white text-gray-700 hover:bg-[#BBCED4] hover:border-[#BBCED4]"
+                }`}
+              >
+                <span className="hidden sm:inline">Previous</span>
+                <span className="sm:hidden">Prev</span>
+              </button>
 
-    {/* Page Numbers */}
-    <div className="flex gap-1 sm:gap-2">
-      {getPageNumbers().map((page, index) =>
-        page === "..." ? (
-          <span
-            key={`ellipsis-${index}`}
-            className="px-1 sm:px-2 text-gray-500 flex items-center"
-          >
-            ...
-          </span>
-        ) : (
-          <button
-            key={page}
-            onClick={() => handlePageChange(page)}
-            className={`px-2 sm:px-4 py-1.5 sm:py-2 rounded-lg border transition-colors text-sm sm:text-base min-w-[32px] sm:min-w-[40px] ${
-              currentPage === page
-                ? "bg-[#BBCED4] text-black border-[#BBCED4] font-semibold"
-                : "bg-white text-gray-700 hover:bg-[#BBCED4]/30 hover:border-[#BBCED4]"
-            }`}
-          >
-            {page}
-          </button>
-        ),
-      )}
-    </div>
+              {/* Page Numbers */}
+              <div className="flex gap-1 sm:gap-2">
+                {getPageNumbers().map((page, index) =>
+                  page === "..." ? (
+                    <span
+                      key={`ellipsis-${index}`}
+                      className="px-1 sm:px-2 text-gray-500 flex items-center"
+                    >
+                      ...
+                    </span>
+                  ) : (
+                    <button
+                      key={page}
+                      onClick={() => handlePageChange(page)}
+                      className={`px-2 sm:px-4 py-1.5 sm:py-2 rounded-lg border transition-colors text-sm sm:text-base min-w-[32px] sm:min-w-[40px] ${
+                        currentPage === page
+                          ? "bg-[#BBCED4] text-black border-[#BBCED4] font-semibold"
+                          : "bg-white text-gray-700 hover:bg-[#BBCED4]/30 hover:border-[#BBCED4]"
+                      }`}
+                    >
+                      {page}
+                    </button>
+                  ),
+                )}
+              </div>
 
-    {/* Next Button */}
-    <button
-      onClick={() => handlePageChange(currentPage + 1)}
-      disabled={currentPage === totalPages}
-      className={`px-2 sm:px-4 py-1.5 sm:py-2 rounded-lg border transition-colors text-sm sm:text-base ${
-        currentPage === totalPages
-          ? "bg-gray-100 text-gray-400 cursor-not-allowed"
-          : "bg-white text-gray-700 hover:bg-[#BBCED4] hover:border-[#BBCED4]"
-      }`}
-    >
-      <span className="hidden sm:inline">Next</span>
-      <span className="sm:hidden">Next</span>
-    </button>
-  </div>
-)}
+              {/* Next Button */}
+              <button
+                onClick={() => handlePageChange(currentPage + 1)}
+                disabled={currentPage === totalPages}
+                className={`px-2 sm:px-4 py-1.5 sm:py-2 rounded-lg border transition-colors text-sm sm:text-base ${
+                  currentPage === totalPages
+                    ? "bg-gray-100 text-gray-400 cursor-not-allowed"
+                    : "bg-white text-gray-700 hover:bg-[#BBCED4] hover:border-[#BBCED4]"
+                }`}
+              >
+                <span className="hidden sm:inline">Next</span>
+                <span className="sm:hidden">Next</span>
+              </button>
+            </div>
+          )}
         </div>
       </div>
 

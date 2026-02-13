@@ -17,7 +17,7 @@ const partnerData = [
 
 const PartnerSlider = () => {
   return (
-    <div  data-aos="fade-left" className="w-full overflow-hidden bg-white my-0.5 sm:my-1">
+    <div  data-aos="fade" className="w-full overflow-hidden bg-white my-0.5 sm:my-1">
       <div className="flex w-fit animate-scrollLeft">
         {partnerData.map((partner, i) => (
           <img

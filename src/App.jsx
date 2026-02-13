@@ -17,16 +17,16 @@ function App() {
   useEffect(() => {
     AOS.init({
       duration: 1000, // animation duration in ms
-      delay: 200,
+      delay: 400,
       // offset: 140      // delay in ms
-      once: true, // animation only once when scrolling down
+      once: false, // animation only once when scrolling down
     });
   });
 
   return (
     <Router>
       <Navbar />
-      <div className="overflow-x-hidden">
+      <div >
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
