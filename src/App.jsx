@@ -1,44 +1,74 @@
 import ScrollToTop from "./components/scrollToTop/ScrollToTop";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from "./screens/home/Home";
-import AboutUs from "./screens/aboutUs/AboutUs";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
+import { Suspense, lazy, useEffect } from "react";
+import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/footer/Footer";
-// import MensProduct from './screens/productCategory/mensProduct/MensProduct';
-// import WomensProduct from './screens/productCategory/womensProduct/WomensProduct';
-// import KidsProduct from './screens/productCategory/kidsProduct/KidsProduct';
-import Products from './screens/products/Products.jsx';
-import ContactUs from "./screens/contactUs/ContactUs";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
-import Navbar from "./components/Navbar/Navbar";
+import Logo from "./assets/logo.svg";
 
-function App() {
+
+// ✅ Lazy load pages
+const Home = lazy(() => import("./screens/home/Home"));
+const AboutUs = lazy(() => import("./screens/aboutUs/AboutUs"));
+const Products = lazy(() => import("./screens/products/Products"));
+const ContactUs = lazy(() => import("./screens/contactUs/ContactUs"));
+
+function AppContent() {
+  const location = useLocation();
+
+  // Initialize AOS once
   useEffect(() => {
     AOS.init({
-      duration: 1000, // animation duration in ms
+      duration: 1000,
       delay: 400,
-      // offset: 140      // delay in ms
-      once: false, // animation only once when scrolling down
+      once: false,
     });
-  });
+  }, []);
+
+  // Refresh AOS on route change
+  useEffect(() => {
+    AOS.refresh();
+  }, [location]);
 
   return (
-    <Router>
-      <Navbar />
-      <div >
-        <ScrollToTop />
+    <>
+      <ScrollToTop />
+      <Suspense
+          fallback={
+            <div className="flex flex-col justify-center items-center h-screen text-xl space-y-5">
+
+              <img src={Logo} alt="" loading="lazy" className="animate-pulse"/>
+              <p>Loading...</p>
+
+            </div>
+          }
+        >
+        <Navbar />
+
+        {/* ✅ Wrap Routes inside Suspense */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/products" element={<Products />} />
           <Route path="/contactus" element={<ContactUs />} />
-          {/* <Route path="/mens-product" element={<MensProduct />} /> */}
-          {/* <Route path="/womens-product" element={<WomensProduct />} /> */}
-          {/* <Route path="/kids-product" element={<KidsProduct />} /> */}
         </Routes>
-      </div>
-      <Footer />
+
+        <Footer />
+      </Suspense>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   );
 }

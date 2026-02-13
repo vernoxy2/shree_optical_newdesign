@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import React, {  lazy } from "react";
 import contactSectionBg from "../../assets/ContactPageImg/contactSectionBg.png";
 import GetQuote from "../../components/getQuote/GetQuote";
 import PartnerSlider from "../../components/partnerSlider/PartnerSlider";
@@ -24,7 +24,7 @@ const Home = () => {
       <Hero_Slider/>
 
       {/* Lazy-loaded Sections */}
-      <Suspense fallback={<div className="text-center py-10">Loading...</div>}>
+      
         <ShopFor />
         <PartnerSlider />
 
@@ -48,7 +48,6 @@ const Home = () => {
         </div>
         <Choose />
         <HappyCustomers />
-      </Suspense>
 
       {/* Get Quote / Contact Section */}
       <GetQuote backgroundImage={contactSectionBg} />

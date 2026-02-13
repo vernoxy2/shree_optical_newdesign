@@ -26,7 +26,7 @@ const Navbar = () => {
    hover:before:scale-x-100`;
 
   return (
-    <nav className="w-full bg-primary ">
+    <div className="w-full bg-primary ">
       {/* ===== Top Bar ===== */}
       <div className="flex items-center justify-between py-3 md:justify-between container ">
         {/* Logo */}
@@ -86,7 +86,7 @@ const Navbar = () => {
           })}
         </div>
       </div>
-    </nav>
+    </div>
   );
 };
 
