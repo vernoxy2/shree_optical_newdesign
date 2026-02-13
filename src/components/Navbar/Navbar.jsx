@@ -15,8 +15,8 @@ const Navbar = () => {
     { name: "Contact Us", path: "/contactus" },
   ];
 
- const navLinkClass = (isMobile = false, isActive = false) =>
-  `relative text-sm md:text-lg xl:text-xl 2xl:text-2xl
+  const navLinkClass = (isMobile = false, isActive = false) =>
+    `relative text-sm md:text-lg xl:text-xl 2xl:text-2xl
    font-kaisei_Decol font-normal pb-1
    ${isMobile ? "text-primary" : "text-white"}
    before:content-[''] before:absolute before:left-0 before:bottom-0
@@ -66,26 +66,25 @@ const Navbar = () => {
 
       {/* ===== Mobile Menu ===== */}
       <div
-        className={`md:hidden bg-white text-primary px-6 pb-6 pt-4 z-0 absolute w-full shadow-lg
+        className={`md:hidden bg-white text-primary px-6 pb-6 pt-4 z-10 absolute w-full shadow-lg
               transform transition-all duration-300
               ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10 pointer-events-none"}`}
       >
         <div className="flex flex-col gap-5">
-  {links.map(({ name, path }) => {
-    const isActive = location.pathname === path;
-    return (
-      <Link
-        key={name}
-        to={path}
-        className={navLinkClass(true, isActive)}
-        onClick={() => setMenuOpen(false)}
-      >
-        {name}
-      </Link>
-    );
-  })}
-</div>
-
+          {links.map(({ name, path }) => {
+            const isActive = location.pathname === path;
+            return (
+              <Link
+                key={name}
+                to={path}
+                className={navLinkClass(true, isActive)}
+                onClick={() => setMenuOpen(false)}
+              >
+                {name}
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </nav>
   );

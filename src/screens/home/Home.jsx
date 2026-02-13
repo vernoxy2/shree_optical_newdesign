@@ -11,6 +11,7 @@ import LensesBg from "../../assets/HomePageImgs/Lenses/LensesBg.png";
 import { EyeglassesData } from "../../Data/EyeglassesData";
 import { SunglassessData } from "../../Data/SunglassessData";
 import { LensessData } from "../../Data/LensessData";
+import Hero_Slider from "../../components/Hero_Slider/Hero_Slider";
 
 const Choose = lazy(() => import("./Choose"));
 const HappyCustomers = lazy(() => import("./HappyCustomers"));
@@ -19,7 +20,8 @@ const Home = () => {
   return (
     <main>
       {/* Hero/Header Section */}
-      <HomeHeader />
+      {/* <HomeHeader /> */}
+      <Hero_Slider/>
 
       {/* Lazy-loaded Sections */}
       <Suspense fallback={<div className="text-center py-10">Loading...</div>}>
