@@ -1,15 +1,13 @@
 import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import PrimaryHeading from "../../components/Primarycompo/PrimaryHeading";
 import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 import { IoIosArrowRoundForward } from "react-icons/io";
+
+// Swiper styles
+import "swiper/css";
 
 const NavButton = ({ direction = "next", onClick }) => (
   <button
@@ -42,103 +40,98 @@ const HomeProduct = ({
 
   return (
     <section
-      className="relative bg-cover bg-center bg-no-repeat"
+      className="relative bg-cover bg-center bg-no-repeat 
+                 md:sticky md:top-0 z-0 h-fit 
+                 flex flex-col items-center justify-center overflow-x-hidden rounded-t-3xl py-0"
       style={{ backgroundImage: `url(${SectionBg})` }}
     >
-      {/* Content */}
-      <div className="relative z-10 space-y-10">
-        <PrimaryHeading className={className}>{SectionHeading}</PrimaryHeading>
+      <div className="relative z-10 space-y-10 w-full  py-5 pb-10">
+        <PrimaryHeading className={className}>
+          {SectionHeading}
+        </PrimaryHeading>
 
-        {/* Swiper Carousel */}
         <div className="container mx-auto px-4">
           <Swiper
-            ref={swiperRef}
-            // loop={true}
-            centeredSlides={true}
-            spaceBetween={24}
-            slidesPerView={1.2 }
+            onSwiper={(swiper) => (swiperRef.current = swiper)}
+            centeredSlides
+            spaceBetween={32}
+            slidesPerView={1.2}
             autoplay={{
-              delay: 1000,
+              delay: 2000,
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
             }}
-            speed={1200}
+            speed={1000}
             breakpoints={{
-              640: {
-                slidesPerView: 2,
-              },
-              768: {
-                slidesPerView: 3,
-              },
-              1024: {
-                slidesPerView: 5,
-              },
-            }}
-            pagination={{
-              clickable: true,
+              640: { slidesPerView: 2 },
+              768: { slidesPerView: 3 },
+              1024: { slidesPerView: 5 },
             }}
             modules={[Autoplay]}
-            className="mySwiper"
           >
             {productDataList.map((item) => (
-              <SwiperSlide key={item.id} className="my-auto py-4">
-                {({ isActive }) => (
-                  <div
-                    className={`bg-[#F5F9FC] rounded-2xl relative group
-                  transition-all duration-500 ease-in-out
-                  ${
-                    isActive
-                      ? "scale-110 opacity-100 shadow-md z-10"
-                      : "scale-90 opacity-95"
-                  }`}
-                  >
-                    <img
-                      src={item.image}
-                      alt={item.label}
-                      className="object-contain w-full h-auto rounded-2xl"
-                    />
+              <SwiperSlide key={item.id} className="py-6">
+                {({ isActive, isPrev, isNext }) => {
+                  let scaleClass = "scale-90 ";
 
+                  if (isActive) {
+                    scaleClass = "scale-110  z-10";
+                  } else if (isPrev || isNext) {
+                    scaleClass = "scale-100 backdrop-blur-sm";
+                  }
+
+                  return (
                     <div
-                      className={`absolute inset-0 rounded-2xl p-3 
-                    flex flex-col justify-between
-                    transition-all duration-300
-                    ${
-                      isActive
-                        ? "visible"
-                        : " invisible "
-                    }`}
+                      className={`bg-[#F5F9FC] rounded-2xl relative group
+                      transition-all duration-500 ease-in-out 
+                      ${scaleClass}`}
                     >
-                      <h3
-                        onClick={
-                          isActive
-                            ? () => handleEyeglassesClick(item.label)
-                            : undefined
-                        }
-                        className="text-[#06213C] bg-white text-3xl 
-                     font-bold text-center w-fit ms-auto 
-                     rounded-full p-1 cursor-pointer
-                     transition-all duration-300
-                     group-hover:bg-[#06213C] group-hover:text-white group-hover:-rotate-45"
-                      >
-                        <IoIosArrowRoundForward />
-                      </h3>
+                      <img
+                        src={item.image}
+                        alt={item.label}
+                        className="object-cover w-full h-auto rounded-2xl"
+                      />
 
-                      <h3
-                        className={`text-[#06213C] bg-[#F5F9FC] text-xl 
-                      font-kaisei_Decol text-center 
-                      w-fit mx-auto px-8 p-1.5 rounded-md
-                      transition-all duration-300
-                      ${
-                        isActive
-                          ? "translate-y-0 opacity-100"
-                          : "translate-y-4 opacity-0"
-                      }`}
+                      {/* Overlay */}
+                      <div
+                        className={`absolute inset-0 rounded-2xl p-3 
+                        flex flex-col justify-between transition-all duration-300
+                        ${isActive ? "visible" : "invisible"}`}
                       >
-                        {item.label}
-                      </h3>
+                        {/* Arrow */}
+                        <div className="flex justify-end">
+                          <button
+                            onClick={() =>
+                              isActive &&
+                              handleEyeglassesClick(item.label)
+                            }
+                            className="text-[#06213C] bg-white text-3xl 
+                                       font-bold rounded-full p-1 
+                                       transition-all duration-300
+                                       hover:bg-[#06213C] hover:text-white hover:-rotate-45"
+                          >
+                            <IoIosArrowRoundForward />
+                          </button>
+                        </div>
+
+                        {/* Label */}
+                        <div
+                          className={`text-[#06213C] bg-[#F5F9FC] text-xl 
+                          font-kaisei_Decol text-center 
+                          w-fit mx-auto px-8 py-1.5 rounded-md
+                          transition-all duration-300
+                          ${
+                            isActive
+                              ? "translate-y-0 opacity-100"
+                              : "translate-y-4 opacity-0"
+                          }`}
+                        >
+                          {item.label}
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                )}
+                  );
+                }}
               </SwiperSlide>
             ))}
           </Swiper>
@@ -146,18 +139,16 @@ const HomeProduct = ({
 
         {/* Navigation */}
         <div
-          className="bg-primary backdrop-blur-md 
-                        p-3 max-w-fit mx-auto 
-                        rounded-full flex items-center gap-16 
-                        shadow-2xl"
+          className="bg-primary p-3 max-w-fit mx-auto 
+                     rounded-full flex items-center gap-16 shadow-2xl"
         >
           <NavButton
             direction="prev"
-            onClick={() => swiperRef.current?.swiper.slidePrev()}
+            onClick={() => swiperRef.current?.slidePrev()}
           />
           <NavButton
             direction="next"
-            onClick={() => swiperRef.current?.swiper.slideNext()}
+            onClick={() => swiperRef.current?.slideNext()}
           />
         </div>
       </div>

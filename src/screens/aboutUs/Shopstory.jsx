@@ -6,7 +6,7 @@ import Qute from "../../assets/AboutPageImgs/Qute.svg";
 const Shopstory = () => {
   return (
     <section className="container mt-10 md:pt-36">
-      <div className="w-full bg-primary  ">
+      <div data-aos="fade" className="w-full bg-primary  ">
         <div
           data-aos="fade"
           className="  grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-10"

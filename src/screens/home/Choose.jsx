@@ -34,32 +34,39 @@ const cardData = [
 const Choose = () => {
   return (
     <>
-      
       <section className="container">
         <div className="grid gap-4 md:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
           <div className="space-y-5">
             <h1 className="text-4xl xl:text-5xl text-[#06213c] font-kaisei_Decol font-normal">
               Why Choose Us ?
             </h1>
-            <p className="text-xl xl:text-2xl font-kanit 2xl:pe-20">Experience the difference with our commitment to vision, style, and genuine care — trusted by thousands of happy customers.</p>
-            <hr className="border-primary border-2 rounded-full w-32"/>
+            <p className="text-xl xl:text-2xl font-kanit 2xl:pe-20">
+              Experience the difference with our commitment to vision, style,
+              and genuine care — trusted by thousands of happy customers.
+            </p>
+            <hr className="border-primary border-2 rounded-full w-32" />
           </div>
           {cardData.map((card, index) => (
             <div
               key={index}
-              className="bg-[#F8F8F8] hover:bg-primary duration-300 transition-colors rounded-2xl p-8 flex flex-col items-center justify-center gap-6 text-center hover:shadow-2xl group"
+              data-aos="fade-up"
+              data-aos-delay={index * 200} // 0ms, 200ms, 400ms, 600ms
+              data-aos-duration="1000" // slow animation (1s)
+              data-aos-easing="ease-in-out"
             >
-              <img
-                src={card.icon}
-                alt={`icon${index}`}
-                className="h-[50px] w-[60px]"
-              />
-              <h1 className="text-xl sm:text-[30px] text-[#06213c] group-hover:text-white duration-300 transition-colors font-kaisei_Decol">
-                {card.title}
-              </h1>
-              <p className=" sm:text-[20px] text-[#06213c] group-hover:text-white duration-300  transition-colors font-normal font-kanit">
-                {card.desc}
-              </p>
+              <div className="bg-[#F8F8F8] h-full hover:bg-primary hover:scale-105 duration-500 transition-all rounded-2xl p-8 flex flex-col items-center justify-center gap-6 text-center hover:shadow-xl group">
+                <img
+                  src={card.icon}
+                  alt={`icon${index}`}
+                  className="h-[50px] w-[60px]"
+                />
+                <h1 className="text-xl sm:text-[30px] text-[#06213c] group-hover:text-white duration-300 transition-colors font-kaisei_Decol">
+                  {card.title}
+                </h1>
+                <p className=" sm:text-[20px] text-[#06213c] group-hover:text-white duration-300  transition-colors font-normal font-kanit">
+                  {card.desc}
+                </p>
+              </div>
             </div>
           ))}
         </div>

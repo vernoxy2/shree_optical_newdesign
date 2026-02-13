@@ -48,33 +48,40 @@ const ShopFor = () => {
       <div className="py-10 md:py-20 space-y-4 md:space-y-8">
         <PrimaryHeading>Shop For</PrimaryHeading>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-7 container ">
-          {data.map((item) => (
+          {data.map((item, index) => (
             <div
-              data-aos="fade-up"
               key={item.id}
-              onClick={() => handleNavigate(item.category)}
-              className="relative flex flex-col items-end justify-end  rounded-[16px] group overflow-hidden cursor-pointer bg-[#F5F9FC] hover:bg-primary"
+              data-aos="fade-up"
+              data-aos-delay={index * 300}
+              data-aos-duration="1200"
+              data-aos-easing="ease-in-out"
+              data-aos-once="true"
             >
-              <FiArrowRight
-                className="absolute top-3 left-3
-             text-[#1F1F20] bg-white
-             rounded-full p-2
-             text-4xl
-             transform rotate-0
-             group-hover:-rotate-45
-           group-hover:text-primary
-               group-hover:bg-white
-             transition-transform duration-700 ease-in-out
-             z-10"
-              />
-              <img
-                src={item.img}
-                alt={item.category}
-                className="object-cover h-44 md:h-80 group-hover:scale-105 duration-1000 ease-in-out"
-              />
-              <p className="absolute text-sm md:text-[26px] text-[#1F1F20] group-hover:text-white font-Kanit bottom-0 left-0 p-7  ">
-                {item.category}
-              </p>
+              <div
+                onClick={() => handleNavigate(item.category)}
+                className="relative flex flex-col items-end justify-end rounded-[16px] group overflow-hidden cursor-pointer bg-[#F5F9FC] hover:bg-primary transform-gpu transition-all duration-500"
+              >
+                <FiArrowRight
+                  className="absolute top-3 left-3
+        text-[#1F1F20] bg-white
+        rounded-full p-2
+        text-4xl
+        transform transition-transform duration-700 ease-in-out
+        group-hover:-rotate-45
+        group-hover:text-primary
+        z-10"
+                />
+
+                <img
+                  src={item.img}
+                  alt={item.category}
+                  className="object-cover h-44 md:h-80 transform-gpu transition-transform duration-700 ease-in-out group-hover:scale-105"
+                />
+
+                <p className="absolute text-sm md:text-[26px] text-[#1F1F20] group-hover:text-white font-Kanit bottom-0 left-0 p-7 transition-colors duration-300">
+                  {item.category}
+                </p>
+              </div>
             </div>
           ))}
         </div>

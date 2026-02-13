@@ -51,7 +51,7 @@ const Footer = () => {
       ">
         <div className="container  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-y-8   ">
           {/* logo container  */}
-          <div className="flex flex-col justify-center gap-5 md:col-span-2 xl:col-span-1 w-[80%] xl:w-full">
+          <div data-aos="fade-up" className="flex flex-col justify-center gap-5 md:col-span-2 xl:col-span-1 w-[80%] xl:w-full">
             <img
               src={logo}
               alt="logo"
@@ -89,7 +89,7 @@ const Footer = () => {
             </div>
           </div>
           {/* quick links for Pages */}
-          <div className="space-y-2 xl:mx-auto ">
+          <div data-aos="fade-up" className="space-y-2 xl:mx-auto ">
             <h1 className="text-primary font-poppins md:text-lg xl:text-xl font-semibold ">
               Pages
             </h1>
@@ -109,7 +109,7 @@ const Footer = () => {
           </div>
 
           {/* quick links for products */}
-          <div className="space-y-2 xl:mx-10">
+          <div data-aos="fade-up" className="space-y-2 xl:mx-10">
             <h1 className="text-primary font-poppins md:text-lg xl:text-xl font-semibold ">
               Products
             </h1>
@@ -130,7 +130,7 @@ const Footer = () => {
           </div>
 
           {/* contact us details */}
-          <div className=" space-y-3 ">
+          <div data-aos="fade-up" className=" space-y-3 ">
             <h1 className="text-primary font-poppins md:text-lg xl:text-xl font-semibold ">
               Contact Us
             </h1>

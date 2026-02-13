@@ -9,6 +9,7 @@ const WhatSetUsApart = () => {
         {/* Background Image */}
         <div className=" flex justify-center lg:justify-start">
           <img
+          data-aos="zoom-out"
             src={WhatSetApartBg}
             alt="What Sets Us Apart Background"
             className="w-full max-w-sm lg:max-w-full object-contain scale-125"
@@ -16,7 +17,7 @@ const WhatSetUsApart = () => {
         </div>
 
         {/* Content Box */}
-        <div className="bg-primary text-white rounded-2xl  p-6 sm:p-10 lg:p-16 space-y-6 chat-bubble relative">
+        <div data-aos="fade-right" className="bg-primary text-white rounded-2xl  p-6 sm:p-10 lg:p-16 space-y-6 chat-bubble relative">
           <div>
             <h1 className="font-kaisei_Decol text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-light">
               What Sets Us Apart
