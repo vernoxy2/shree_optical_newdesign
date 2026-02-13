@@ -13,7 +13,8 @@ const GetQuote = () => {
         data-aos-duration="1500"
         data-aos-easing="ease-in-out"
         data-aos-once="true"
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+       className="absolute inset-0 bg-cover bg-right xl:bg-center bg-no-repeat opacity-10"
+
         style={{ backgroundImage: `url(${aboutGetQuotebg})` }}
       ></div>
 
@@ -21,7 +22,7 @@ const GetQuote = () => {
       <div className="relative container flex flex-col lg:flex-row items-center justify-between gap-10">
         
         <div className="space-y-8 lg:w-1/2 text-center lg:text-left">
-          <PrimaryHeading className="lg:text-start py-0">
+          <PrimaryHeading className="lg:text-start pb-0">
             Contact Us
           </PrimaryHeading>
 

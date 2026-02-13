@@ -42,10 +42,10 @@ const HomeProduct = ({
     <section
       className="relative bg-cover bg-center bg-no-repeat 
                  md:sticky md:top-0 z-0 h-fit 
-                 flex flex-col items-center overflow-x-hidden"
+                 flex flex-col items-center justify-center overflow-x-hidden rounded-t-3xl py-0"
       style={{ backgroundImage: `url(${SectionBg})` }}
     >
-      <div className="relative z-10 space-y-10 w-full">
+      <div className="relative z-10 space-y-10 w-full  py-5 pb-10">
         <PrimaryHeading className={className}>
           {SectionHeading}
         </PrimaryHeading>
@@ -89,7 +89,7 @@ const HomeProduct = ({
                       <img
                         src={item.image}
                         alt={item.label}
-                        className="object-contain w-full h-auto rounded-2xl"
+                        className="object-cover w-full h-auto rounded-2xl"
                       />
 
                       {/* Overlay */}
