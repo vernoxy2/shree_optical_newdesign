@@ -42,7 +42,7 @@ const HomeProduct = ({
     <section
       className="relative bg-cover bg-center bg-no-repeat 
                  md:sticky md:top-0 z-0 h-fit 
-                 flex flex-col items-center justify-center overflow-x-hidden rounded-t-3xl py-0"
+                 flex flex-col items-center justify-center overflow-x-hidden md:rounded-t-3xl py-0"
       style={{ backgroundImage: `url(${SectionBg})` }}
     >
       <div className="relative z-10 space-y-10 w-full  py-5 pb-10">
